@@ -164,35 +164,35 @@
 
 1st Run: application_ID1
 -----------------------------------
-scala> spark.sql("SELECT SYS_ID, COUNT(*) FROM hudiTab GROUP BY SYS_ID HAVING COUNT(*) > 1").count
+scala> spark.sql("SELECT _hoodie_record_key, COUNT(*) FROM hudiTab GROUP BY _hoodie_record_key HAVING COUNT(*) > 1").count
 res1: Long = 0                                                                 
  
 scala> spark.sql("select * from hudiTab").count
 res2: Long = 9575544                                                           
  
-scala> spark.sql("select distinct SYS_ID from hudiTab").count
+scala> spark.sql("select distinct _hoodie_record_key from hudiTab").count
 res3: Long = 9575544
  
  
 2nd Run: application_ID2
 -----------------------------------
-scala> spark.sql("SELECT SYS_ID, COUNT(*) FROM hudiTab GROUP BY SYS_ID HAVING COUNT(*) > 1").count
+scala> spark.sql("SELECT _hoodie_record_key, COUNT(*) FROM hudiTab GROUP BY _hoodie_record_key HAVING COUNT(*) > 1").count
 res5: Long = 1089397                                                           
  
 scala> spark.sql("select * from hudiTab").count
 res6: Long = 16996843                                                           
  
-scala> spark.sql("select distinct SYS_ID from hudiTab").count
+scala> spark.sql("select distinct _hoodie_record_key from hudiTab").count
 res7: Long = 15907446
  
  
 3rd Run: application_ID3
 -----------------------------------
-scala> spark.sql("SELECT SYS_ID, COUNT(*) FROM hudiTab GROUP BY SYS_ID HAVING COUNT(*) > 1").count
+scala> spark.sql("SELECT _hoodie_record_key, COUNT(*) FROM hudiTab GROUP BY _hoodie_record_key HAVING COUNT(*) > 1").count
 res1: Long = 1173675                                                           
  
 scala> spark.sql("select * from hudiTab").count
 res2: Long = 17132659                                                          
  
-scala> spark.sql("select distinct SYS_ID from hudiTab").count
+scala> spark.sql("select distinct _hoodie_record_key from hudiTab").count
 res3: Long = 15958877
