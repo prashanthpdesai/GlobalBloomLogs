@@ -1,0 +1,203 @@
+******1st Run*********
+20/06/23 05:14:17 INFO timeline.HoodieActiveTimeline: Creating a new instant [==>20200623051417__commit__REQUESTED]
+20/06/23 05:14:17 INFO deltastreamer.DeltaSync: Starting commit  : 20200623051417
+20/06/23 05:14:17 INFO view.FileSystemViewManager: Creating View Manager with storage type :REMOTE_FIRST
+20/06/23 05:14:17 INFO view.FileSystemViewManager: Creating remote first table view
+20/06/23 05:14:17 INFO client.HoodieWriteClient: Generate a new instant time 20200623051417
+20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 05:14:17 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@59aeb3b8]
+20/06/23 05:14:17 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
+20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 05:14:17 INFO timeline.HoodieActiveTimeline: Loaded instants []
+20/06/23 05:14:17 INFO timeline.HoodieActiveTimeline: Creating a new instant [==>20200623051417__commit__REQUESTED]
+20/06/23 05:14:17 INFO deltastreamer.DeltaSync: Starting commit  : 20200623051417
+20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 05:14:17 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@59aeb3b8]
+20/06/23 05:14:17 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
+20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Getting 1 non-empty blocks out of 60 blocks
+20/06/23 05:15:34 INFO client.TransportClientFactory: Successfully created connection to dbslp0853.uhc.com/10.176.27.189:39814 after 1 ms (0 ms spent in bootstraps)
+20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Started 1 remote fetches in 4 ms
+20/06/23 05:15:34 INFO spark.MapOutputTrackerWorker: Don't have map outputs for shuffle 4, fetching them
+20/06/23 05:15:34 INFO spark.MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.176.109.143:39778)
+20/06/23 05:15:34 INFO spark.MapOutputTrackerWorker: Got the output locations
+20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 0 blocks
+20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:19:136168179:XZ:07146600024175360501001,2020-06-19,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:15:314855595:XZ:02270790054335788500001,2020-06-23,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:13:9847253:XZ:09135690037348924100001,2020-06-19,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:7:269369007:XZ:77170470001544387701001,2020-06-22,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:2:23790122:XZ:09155200043237725601001,2020-06-23,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:1:41494061:XZ:11650580012372071900001,2020-06-19,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:18:57879278:XZ:07175420024941633901001,2020-06-19,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:20:293983760:XZ:09135760022923434802002,2020-06-23,INSERT,Optional.empty
+20/06/23 05:15:35 INFO bloom.HoodieGlobalBloomIndex: >>> abc:19:147629719:XZ:62695190055004393401001,2020-06-22,INSERT,Optional.empty
+20/06/23 05:15:36 INFO memory.MemoryStore: Block rdd_34_13 stored as bytes in memory (estimated size 45.8 MB, free 3.0 GB)
+20/06/23 05:15:37 INFO executor.Executor: Finished task 13.0 in stage 14.0 (TID 329). 2220 bytes result sent to driver
+20/06/23 05:15:43 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 377
+20/06/23 05:15:43 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 433
+20/06/23 05:15:43 INFO executor.Executor: Running task 57.0 in stage 15.0 (TID 433)
+20/06/23 05:15:43 INFO spark.MapOutputTrackerWorker: Updating epoch to 5 and clearing cache
+20/06/23 05:15:43 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 11
+20/06/23 05:15:47 INFO io.HoodieWriteHandle: Creating Marker Path=/datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/.temp/20200623051417/2020-06-22/13462ee0-ef50-4754-81de-93300b93d135-0_27-22-526_20200623051417.marker
+20/06/23 05:15:47 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
+20/06/23 05:15:47 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
+20/06/23 05:15:47 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
+20/06/23 05:15:47 INFO zlib.ZlibFactory: Successfully loaded & initialized native-zlib library
+20/06/23 05:15:47 INFO compress.CodecPool: Got brand-new compressor [.gz]
+20/06/23 05:15:48 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
+20/06/23 05:15:48 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
+20/06/23 05:15:48 INFO io.HoodieCreateHandle: New CreateHandle for partition :2020-06-22 with fileId 13462ee0-ef50-4754-81de-93300b93d135-0
+20/06/23 05:15:53 INFO queue.IteratorBasedQueueProducer: finished buffering records
+20/06/23 05:15:53 INFO io.HoodieCreateHandle: Closing the file 13462ee0-ef50-4754-81de-93300b93d135-0 as we are done with all the records 130587
+20/06/23 05:15:53 INFO hadoop.InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 18089694
+20/06/23 05:15:54 INFO io.HoodieCreateHandle: CreateHandle for partitionPath 2020-06-22 fileID 13462ee0-ef50-4754-81de-93300b93d135-0, took 6502 ms.
+20/06/23 05:15:54 INFO queue.BoundedInMemoryExecutor: Queue Consumption is done; notifying producer threads
+20/06/23 05:15:54 INFO memory.MemoryStore: Block rdd_44_27 stored as bytes in memory (estimated size 377.0 B, free 3.0 GB)
+20/06/23 05:15:54 INFO executor.Executor: Finished task 27.0 in stage 22.0 (TID 526). 1878 bytes result sent to driver
+20/06/23 05:15:57 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 597
+20/06/23 05:15:57 INFO executor.Executor: Running task 27.0 in stage 28.0 (TID 597)
+20/06/23 05:15:57 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 15
+20/06/23 05:15:57 INFO memory.MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 58.1 KB, free 3.0 GB)
+20/06/23 05:15:57 INFO broadcast.TorrentBroadcast: Reading broadcast variable 15 took 64 ms
+20/06/23 05:15:57 INFO memory.MemoryStore: Block broadcast_15 stored as values in memory (estimated size 146.5 KB, free 3.0 GB)
+20/06/23 05:15:57 INFO storage.BlockManager: Found block rdd_44_27 locally
+20/06/23 05:15:57 INFO executor.Executor: Finished task 27.0 in stage 28.0 (TID 597). 1592 bytes result sent to driver
+20/06/23 05:15:57 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 678
+20/06/23 05:15:57 INFO executor.Executor: Running task 27.0 in stage 34.0 (TID 678)
+20/06/23 05:15:57 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 16
+20/06/23 05:15:57 INFO memory.MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 58.0 KB, free 3.0 GB)
+20/06/23 05:15:57 INFO broadcast.TorrentBroadcast: Reading broadcast variable 16 took 17 ms
+20/06/23 05:15:57 INFO memory.MemoryStore: Block broadcast_16 stored as values in memory (estimated size 146.2 KB, free 3.0 GB)
+20/06/23 05:15:57 INFO storage.BlockManager: Found block rdd_44_27 locally
+20/06/23 05:15:57 INFO executor.Executor: Finished task 27.0 in stage 34.0 (TID 678). 1885 bytes result sent to driver
+20/06/23 05:15:58 INFO storage.BlockManager: Removing RDD 34
+20/06/23 05:15:59 INFO storage.BlockManager: Removing RDD 44
+20/06/23 05:15:59 INFO executor.CoarseGrainedExecutorBackend: Driver commanded a shutdown
+20/06/23 05:15:59 INFO executor.CoarseGrainedExecutorBackend: Driver from 10.176.109.143:39778 disconnected during shutdown
+20/06/23 05:15:59 INFO executor.CoarseGrainedExecutorBackend: Driver from 10.176.109.143:39778 disconnected during shutdown
+20/06/23 05:15:59 INFO memory.MemoryStore: MemoryStore cleared
+20/06/23 05:15:59 INFO storage.BlockManager: BlockManager stopped
+20/06/23 05:15:59 INFO util.ShutdownHookManager: Shutdown hook called
+
+
+********2nd Batch run *************: 
+20/06/23 06:08:57 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO timeline.HoodieActiveTimeline: Loaded instants [[20200623051417__commit__COMPLETED]]
+20/06/23 06:08:57 INFO view.FileSystemViewManager: Creating View Manager with storage type :REMOTE_FIRST
+20/06/23 06:08:57 INFO view.FileSystemViewManager: Creating remote first table view
+20/06/23 06:08:57 INFO client.HoodieWriteClient: Generate a new instant time 20200623060857
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@3a1ea1b0]
+20/06/23 06:08:57 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO timeline.HoodieActiveTimeline: Loaded instants [[20200623051417__commit__COMPLETED]]
+20/06/23 06:08:57 INFO timeline.HoodieActiveTimeline: Creating a new instant [==>20200623060857__commit__REQUESTED]
+20/06/23 06:08:57 INFO deltastreamer.DeltaSync: Starting commit  : 20200623060857
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@3a1ea1b0]
+20/06/23 06:08:57 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
+20/06/23 06:08:57 INFO timeline.HoodieActiveTimeline: Loaded instants [[20200623051417__commit__COMPLETED], [==>20200623060857__commit__REQUESTED]]
+20/06/23 06:08:57 INFO view.FileSystemViewManager: Creating View Manager with storage type :REMOTE_FIRST
+20/06/23 06:08:57 INFO view.FileSystemViewManager: Creating remote first table view
+20/06/23 06:08:58 INFO spark.SparkContext: Starting job: countByKey at HoodieBloomIndex.java:143
+20/06/23 06:08:58 INFO scheduler.DAGScheduler: Registering RDD 3 (mapToPair at WriteHelper.java:92)
+
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:16:327470796:XZ:09183310000036267801001,2020-06-23,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:14:210434154:XZ:07177300089925055500001,2020-06-23,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:11:42443591:XZ:00262500021146144802003,2020-06-23,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:19:136168179:XZ:07146600024175360501001,2020-06-23,UPDATE_TO_NEW_PARTITION,Optional[(HoodieRecordLocation {instantTime=20200623051417, fileId=a60da475-a558-4d9a-bf3b-34a71a22e64c-0},HoodieKey { recordKey=abc:19:136168179:XZ:07146600024175360501001 partitionPath=2020-06-19})],abc:19:136168179:XZ:07146600024175360501001,2020-06-23
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:18:323607838:XZ:09187920043325292500001,2020-06-19,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:19:201268959:XZ:07314800051098568700001,2020-06-19,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:3:153068563:XZ:15083640018750887002002,2020-06-19,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:12:248511672:XZ:07103250039908416700001,2020-06-19,INSERT,Optional.empty
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:1:41494061:XZ:11650580012372071900001,2020-06-22,UPDATE_TO_NEW_PARTITION,Optional[(HoodieRecordLocation {instantTime=20200623051417, fileId=c53e99a9-6825-4aad-a14c-84e127550d47-0},HoodieKey { recordKey=abc:1:41494061:XZ:11650580012372071900001 partitionPath=2020-06-19})],abc:1:41494061:XZ:11650580012372071900001,2020-06-22
+20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:17:291152237:XZ:09060220000154933302004,2020-06-22,UPDATE_TO_NEW_PARTITION,Optional[(HoodieRecordLocation {instantTime=20200623051417, fileId=0fbd20f9-d902-41fd-bb4e-c285fc7ab9e1-0},HoodieKey { recordKey=abc:17:291152237:XZ:09060220000154933302004 partitionPath=2020-06-19})],abc:17:291152237:XZ:09060220000154933302004,2020-06-22
+20/06/23 06:18:43 INFO memory.MemoryStore: Block rdd_34_48 stored as bytes in memory (estimated size 39.4 MB, free 3.0 GB)
+20/06/23 06:18:44 INFO executor.Executor: Finished task 48.0 in stage 14.0 (TID 559). 2220 bytes result sent to driver
+20/06/23 06:18:44 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 609
+20/06/23 06:18:44 INFO executor.Executor: Running task 38.0 in stage 15.0 (TID 609)
+20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Updating epoch to 7 and clearing cache
+20/06/23 06:18:44 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 13
+20/06/23 06:18:44 INFO memory.MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 2.1 KB, free 3.0 GB)
+20/06/23 06:18:44 INFO broadcast.TorrentBroadcast: Reading broadcast variable 13 took 6 ms
+20/06/23 06:18:44 INFO memory.MemoryStore: Block broadcast_13 stored as values in memory (estimated size 3.6 KB, free 3.0 GB)
+20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Don't have map outputs for shuffle 5, fetching them
+20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.176.110.165:38649)
+20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Got the output locations
+20/06/23 06:18:44 INFO storage.ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 60 blocks
+20/06/23 06:18:44 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+20/06/23 06:18:44 INFO executor.Executor: Finished task 38.0 in stage 15.0 (TID 609). 1844 bytes result sent to driver
+20/06/23 06:18:45 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 686
+20/06/23 06:18:45 INFO executor.Executor: Running task 48.0 in stage 21.0 (TID 686)
+20/06/23 06:18:45 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 15
+20/06/23 06:18:45 INFO client.TransportClientFactory: Successfully created connection to /10.176.110.165:45130 after 0 ms (0 ms spent in bootstraps)
+20/06/23 06:18:45 INFO memory.MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 56.9 KB, free 3.0 GB)
+20/06/23 06:18:45 INFO broadcast.TorrentBroadcast: Reading broadcast variable 15 took 12 ms
+20/06/23 06:18:45 INFO memory.MemoryStore: Block broadcast_15 stored as values in memory (estimated size 147.9 KB, free 3.0 GB)
+20/06/23 06:18:45 INFO storage.BlockManager: Found block rdd_34_48 locally
+20/06/23 06:18:46 INFO executor.Executor: Finished task 48.0 in stage 21.0 (TID 686). 1804 bytes result sent to driver
+20/06/23 06:21:09 INFO storage.BlockManager: Removing RDD 34
+20/06/23 06:21:09 INFO storage.BlockManager: Removing RDD 44
+20/06/23 06:21:09 INFO executor.CoarseGrainedExecutorBackend: Driver commanded a shutdown
+20/06/23 06:21:09 INFO executor.CoarseGrainedExecutorBackend: Driver from 10.176.110.165:38649 disconnected during shutdown
+20/06/23 06:21:09 INFO executor.CoarseGrainedExecutorBackend: Driver from 10.176.110.165:38649 disconnected during shutdown
+20/06/23 06:21:09 INFO memory.MemoryStore: MemoryStore cleared
+20/06/23 06:21:09 INFO storage.BlockManager: BlockManager stopped
+20/06/23 06:21:09 INFO util.ShutdownHookManager: Shutdown hook called
+
+
+
+Stats: 
+
+Duplicate record in Hudi output:
+|_hoodie_commit_time|_hoodie_commit_seqno     |_hoodie_record_key                         |_hoodie_partition_path|_hoodie_file_name                                                      |SYS_ID                                     |INDV_ID|modifiedTs   |modifiedDt|column_n                                        |
++-------------------+-------------------------+-------------------------------------------+----------------------+-----------------------------------------------------------------------+-------------------------------------------+-------+-------------+----------+---------------------------------------------------+
+|20200623061027     |20200623061027_27_1370613|abc:19:136168179:XZ:07146600024175360501001|2020-06-23            |c5c96069-e8e7-4705-bfbc-5b648c15e45e-0_27-22-723_20200623061027.parquet|abc:19:136168179:XZ:07146600024175360501001|       |1592872876168|2020-06-23|[[2016-01-01,2016-07-31,N,Y,N,N,N,N,N,Y,Y,Y,1,1,0]]|
+|20200623051417     |20200623051417_1_230628  |abc:19:136168179:XZ:07146600024175360501001|2020-06-19            |a60da475-a558-4d9a-bf3b-34a71a22e64c-0_1-22-500_20200623051417.parquet |abc:19:136168179:XZ:07146600024175360501001|       |1592576160436|2020-06-19|[[2016-01-01,2016-07-31,N,Y,N,N,N,N,N,Y,Y,Y,1,1,0]]|
+
+
+|_hoodie_commit_time|_hoodie_commit_seqno    |_hoodie_record_key                       |_hoodie_partition_path|_hoodie_file_name                                                      |SYS_ID                                   |INDV_ID|modifiedTs   |modifiedDt|column_n                                        |
+|20200623051417     |20200623051417_13_4599  |abc:1:41494061:XZ:11650580012372071900001|2020-06-19            |c53e99a9-6825-4aad-a14c-84e127550d47-0_13-22-512_20200623051417.parquet|abc:1:41494061:XZ:11650580012372071900001|       |1592558898826|2020-06-19|[[2014-12-01,2015-09-30,N,Y,N,N,N,N,Y,Y,Y,Y,1,1,0]]|
+|20200623061027     |20200623061027_56_332793|abc:1:41494061:XZ:11650580012372071900001|2020-06-22            |530ab0b8-5137-410e-b51f-acea888c4eca-0_56-22-752_20200623061027.parquet|abc:1:41494061:XZ:11650580012372071900001|       |1592856667408|2020-06-22|[[2014-12-01,2015-09-30,N,Y,N,N,N,N,Y,Y,Y,Y,1,1,0]]|
+
+1st Run: application_ID1
+-----------------------------------
+scala> spark.sql("SELECT SYS_ID, COUNT(*) FROM hudiTab GROUP BY SYS_ID HAVING COUNT(*) > 1").count
+res1: Long = 0                                                                 
+ 
+scala> spark.sql("select * from hudiTab").count
+res2: Long = 9575544                                                           
+ 
+scala> spark.sql("select distinct SYS_ID from hudiTab").count
+res3: Long = 9575544
+ 
+ 
+2nd Run: application_ID2
+-----------------------------------
+scala> spark.sql("SELECT SYS_ID, COUNT(*) FROM hudiTab GROUP BY SYS_ID HAVING COUNT(*) > 1").count
+res5: Long = 1089397                                                           
+ 
+scala> spark.sql("select * from hudiTab").count
+res6: Long = 16996843                                                           
+ 
+scala> spark.sql("select distinct SYS_ID from hudiTab").count
+res7: Long = 15907446
+ 
+ 
+3rd Run: application_ID3
+-----------------------------------
+scala> spark.sql("SELECT SYS_ID, COUNT(*) FROM hudiTab GROUP BY SYS_ID HAVING COUNT(*) > 1").count
+res1: Long = 1173675                                                           
+ 
+scala> spark.sql("select * from hudiTab").count
+res2: Long = 17132659                                                          
+ 
+scala> spark.sql("select distinct SYS_ID from hudiTab").count
+res3: Long = 15958877
