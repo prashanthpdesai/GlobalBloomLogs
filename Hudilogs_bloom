@@ -147,6 +147,35 @@
 20/06/23 06:21:09 INFO storage.BlockManager: BlockManager stopped
 20/06/23 06:21:09 INFO util.ShutdownHookManager: Shutdown hook called
 
+===================
+## Propery file arguments passed in k8's .
+2020-06-23 18:02:14,441 [main]  INFO SparkLauncherApplication - =================> Now launching hudi spark app <=================== - message_key= 
+propertiesFile          /opt/mapr/spark/spark-2.2.1/conf/spark-defaults.conf
+driverMemory            4g
+driverCores             null
+driverExtraLibraryPath  null
+driverExtraJavaOptions  null
+supervise               false
+numExecutors            100
+mainClass               org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer
+primaryResource         file:/usr/apps/hudi-utilities-bundle_2.11-0.6.0-SNAPSHOT.jar
+name                    org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer
+childArgs               [--props /datalake/xxx/xxx/xx/xx/xx/p_hudi/p_conf/kafka-hudi-prod.properties --schemaprovider-class org.apache.hudi.utilities.schema.SchemaRegistryProvider --source-class org.apache.hudi.utilities.sources.AvroKafkaSource --target-base-path /datalake/xxx/xxx/xx/xx/hudi_cow_dedup_debug_new --target-table mcm.hudi.delta.cow.dedup.full.debug.new --table-type COPY_ON_WRITE --commit-on-errors --op UPSERT --source-ordering-field modifiedDt]
+verbose                 true
+name                    org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer
+childArgs               [--props xxx/xxx/xx/xx/prd/p_hudi/p_conf/kafka-hudi-prod.properties --schemaprovider-class org.apache.hudi.utilities.schema.SchemaRegistryProvider --source-class org.apache.hudi.utilities.sources.AvroKafkaSource --target-base-path /datalake/xxx/xxx/xx/prd/xxx/hudi_cow_dedup_debug_new --target-table mcm.hudi.delta.cow.dedup.full.debug.new --table-type COPY_ON_WRITE --commit-on-errors --op UPSERT --source-ordering-field modifiedDt]
+
+Spark properties used, including those specified through
+ --conf and those from the properties file /opt/spark/spark-2.2.1/conf/spark-defaults.conf:
+   (spark.streaming.kafka.allowNonConsecutiveOffsets,true)
+  (spark.executor.memory,6g)
+  (spark.driver.memory,4g)
+  (spark.executor.instances,100)
+  (spark.logConf,true)
+  (spark.eventLog.enabled,true)
+  (spark.yarn.executor.memoryOverhead,4096)
+  (spark.yarn.driver.memoryOverhead,2024)
+
 
 
 ## Stats: 
