@@ -38,13 +38,8 @@
 20/06/23 05:15:43 INFO spark.MapOutputTrackerWorker: Updating epoch to 5 and clearing cache
 20/06/23 05:15:43 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 11
 20/06/23 05:15:47 INFO io.HoodieWriteHandle: Creating Marker Path=/datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/.temp/20200623051417/2020-06-22/13462ee0-ef50-4754-81de-93300b93d135-0_27-22-526_20200623051417.marker
-20/06/23 05:15:47 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
-20/06/23 05:15:47 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
-20/06/23 05:15:47 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
 20/06/23 05:15:47 INFO zlib.ZlibFactory: Successfully loaded & initialized native-zlib library
 20/06/23 05:15:47 INFO compress.CodecPool: Got brand-new compressor [.gz]
-20/06/23 05:15:48 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
-20/06/23 05:15:48 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: ], FileSystem: [com.mapr.fs.MapRFileSystem@393dccca]
 20/06/23 05:15:48 INFO io.HoodieCreateHandle: New CreateHandle for partition :2020-06-22 with fileId 13462ee0-ef50-4754-81de-93300b93d135-0
 20/06/23 05:15:53 INFO queue.IteratorBasedQueueProducer: finished buffering records
 20/06/23 05:15:53 INFO io.HoodieCreateHandle: Closing the file 13462ee0-ef50-4754-81de-93300b93d135-0 as we are done with all the records 130587
@@ -103,7 +98,6 @@
 20/06/23 06:08:57 INFO view.FileSystemViewManager: Creating remote first table view
 20/06/23 06:08:58 INFO spark.SparkContext: Starting job: countByKey at HoodieBloomIndex.java:143
 20/06/23 06:08:58 INFO scheduler.DAGScheduler: Registering RDD 3 (mapToPair at WriteHelper.java:92)
-
 20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:16:327470796:XZ:09183310000036267801001,2020-06-23,INSERT,Optional.empty
 20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:14:210434154:XZ:07177300089925055500001,2020-06-23,INSERT,Optional.empty
 20/06/23 06:18:40 INFO bloom.HoodieGlobalBloomIndex: >>> abc:11:42443591:XZ:00262500021146144802003,2020-06-23,INSERT,Optional.empty
@@ -124,7 +118,6 @@
 20/06/23 06:18:44 INFO broadcast.TorrentBroadcast: Reading broadcast variable 13 took 6 ms
 20/06/23 06:18:44 INFO memory.MemoryStore: Block broadcast_13 stored as values in memory (estimated size 3.6 KB, free 3.0 GB)
 20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Don't have map outputs for shuffle 5, fetching them
-20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.176.110.165:38649)
 20/06/23 06:18:44 INFO spark.MapOutputTrackerWorker: Got the output locations
 20/06/23 06:18:44 INFO storage.ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 60 blocks
 20/06/23 06:18:44 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
