@@ -5,7 +5,6 @@
 20/06/23 05:14:17 INFO view.FileSystemViewManager: Creating remote first table view
 20/06/23 05:14:17 INFO client.HoodieWriteClient: Generate a new instant time 20200623051417
 20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
-20/06/23 05:14:17 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@59aeb3b8]
 20/06/23 05:14:17 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
 20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
 20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
@@ -13,14 +12,12 @@
 20/06/23 05:14:17 INFO timeline.HoodieActiveTimeline: Creating a new instant [==>20200623051417__commit__REQUESTED]
 20/06/23 05:14:17 INFO deltastreamer.DeltaSync: Starting commit  : 20200623051417
 20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
-20/06/23 05:14:17 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@59aeb3b8]
 20/06/23 05:14:17 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
 20/06/23 05:14:17 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
 20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Getting 1 non-empty blocks out of 60 blocks
-20/06/23 05:15:34 INFO client.TransportClientFactory: Successfully created connection to dbslp0853.uhc.com/10.176.27.189:39814 after 1 ms (0 ms spent in bootstraps)
+20/06/23 05:15:34 INFO client.TransportClientFactory: Successfully created connection to edgenode after 1 ms (0 ms spent in bootstraps)
 20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Started 1 remote fetches in 4 ms
 20/06/23 05:15:34 INFO spark.MapOutputTrackerWorker: Don't have map outputs for shuffle 4, fetching them
-20/06/23 05:15:34 INFO spark.MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.176.109.143:39778)
 20/06/23 05:15:34 INFO spark.MapOutputTrackerWorker: Got the output locations
 20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 0 blocks
 20/06/23 05:15:34 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
@@ -91,7 +88,6 @@
 20/06/23 06:08:57 INFO view.FileSystemViewManager: Creating remote first table view
 20/06/23 06:08:57 INFO client.HoodieWriteClient: Generate a new instant time 20200623060857
 20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
-20/06/23 06:08:57 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@3a1ea1b0]
 20/06/23 06:08:57 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
 20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
 20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
@@ -99,7 +95,6 @@
 20/06/23 06:08:57 INFO timeline.HoodieActiveTimeline: Creating a new instant [==>20200623060857__commit__REQUESTED]
 20/06/23 06:08:57 INFO deltastreamer.DeltaSync: Starting commit  : 20200623060857
 20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading HoodieTableMetaClient from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
-20/06/23 06:08:57 INFO fs.FSUtils: Hadoop Configuration: fs.defaultFS: [maprfs:///], Config:[Configuration: core-default.xml, org.apache.hadoop.conf.CoreDefaultProperties, core-site.xml, yarn-default.xml, org.apache.hadoop.yarn.conf.YarnDefaultProperties, yarn-site.xml, mapred-default.xml, org.apache.hadoop.mapreduce.conf.MapReduceDefaultProperties, mapred-site.xml, hdfs-default.xml, hdfs-site.xml], FileSystem: [com.mapr.fs.MapRFileSystem@3a1ea1b0]
 20/06/23 06:08:57 INFO table.HoodieTableConfig: Loading table properties from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/.hoodie/hoodie.properties
 20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Finished Loading Table of type COPY_ON_WRITE(version=1) from /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
 20/06/23 06:08:57 INFO table.HoodieTableMetaClient: Loading Active commit timeline for /datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new
@@ -154,9 +149,9 @@
 
 
 
-Stats: 
+## Stats: 
 
-Duplicate record in Hudi output:
+## Duplicate record in Hudi output:
 |_hoodie_commit_time|_hoodie_commit_seqno     |_hoodie_record_key                         |_hoodie_partition_path|_hoodie_file_name                                                      |SYS_ID                                     |INDV_ID|modifiedTs   |modifiedDt|column_n                                        |
 +-------------------+-------------------------+-------------------------------------------+----------------------+-----------------------------------------------------------------------+-------------------------------------------+-------+-------------+----------+---------------------------------------------------+
 |20200623061027     |20200623061027_27_1370613|abc:19:136168179:XZ:07146600024175360501001|2020-06-23            |c5c96069-e8e7-4705-bfbc-5b648c15e45e-0_27-22-723_20200623061027.parquet|abc:19:136168179:XZ:07146600024175360501001|       |1592872876168|2020-06-23|[[2016-01-01,2016-07-31,N,Y,N,N,N,N,N,Y,Y,Y,1,1,0]]|
