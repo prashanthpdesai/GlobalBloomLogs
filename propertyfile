@@ -1,3 +1,11 @@
+$ cat hoodie.properties
+#Properties saved on Tue Jun 23 05:14:11 CDT 2020
+#Tue Jun 23 05:14:11 CDT 2020
+hoodie.table.name=hudi.delta.cow.dedup.full.debug.new
+hoodie.archivelog.folder=archived
+hoodie.table.type=COPY_ON_WRITE
+hoodie.timeline.layout.version=1
+
 prashanth@edgenode:/xxx/datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/2020-06-19
 $ ls -latr a60da475-a558-4d9a-bf3b-34a71a22e64c*
 -rwxr-xr-x. 1 xxx xxx  Jun 23 06:19 a60da475-a558-4d9a-bf3b-34a71a22e64c-0_18-22-714_20200623061027.parquet
