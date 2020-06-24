@@ -1,0 +1,77 @@
+prashanth@edgenode:/xxx/datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/2020-06-19
+$ ls -latr a60da475-a558-4d9a-bf3b-34a71a22e64c*
+-rwxr-xr-x. 1 xxx xxx  Jun 23 06:19 a60da475-a558-4d9a-bf3b-34a71a22e64c-0_18-22-714_20200623061027.parquet
+
+
+cat kafka-hudi-prod.properties
+include=base.properties
+hoodie.datasource.write.recordkey.field=MBR_SYS_ID
+hoodie.datasource.write.partitionpath.field=modifiedDt
+hoodie.datasource.write.precombine.field=modifiedTs
+hoodie.index.type=GLOBAL_BLOOM
+hoodie.bloom.index.update.partition.path=true
+hoodie.deltastreamer.schemaprovider.registry.url=http://xxxxxx/subjects/topic-value/versions/latest
+# Kafka Source
+hoodie.deltastreamer.source.kafka.topic=topic
+#Kafka props
+hoodie.auto.commit=false
+enable.auto.commit=false
+hoodie.deltastreamer.kafka.source.maxEvents=10000000
+#client.id=kaas.prod.elr.edzprod.mcm.hudi.new.cow
+group.id=kaas.prod.elr.edzprod.mcm.hudi.cow.dedup.debug1
+bootstrap.servers=kaas-prod-elr-a.optum.com:443
+metadata.broker.list=kaas-prod-elr-a.optum.com:443
+auto.offset.reset=earliest
+schema.registry.url=http://xxxxx
+
+
+
+cat base.properties
+hoodie.upsert.shuffle.parallelism=60
+hoodie.insert.shuffle.parallelism=12
+hoodie.bulkinsert.shuffle.parallelism=12
+hoodie.parquet.max.file.size=134217728
+hoodie.parquet.small.file.limit=104857600
+hoodie.compact.inline.max.delta.commits=15
+
+###############################
+QUEUE: "queue"
+KAFKA_PROP_FILE: "/datalake/xxxx/xxx/xx/prd/xxx/kafka-hudi-prod.properties"
+JARS_PATH: "/datalake/xxx/xx/xx/prd/p_hudi/xxx/avro-1.8.2.jar:/spark/spark/jars/kafka-clients-1.0.1-mapr-1803.jar:/spark/spark-2.2.1/jars/kafka_2.11-1.0.1-mapr-1803.jar"
+HUDI_OUTPUT_LOC: "/datalake/xxxx/xxx/prd/xx/hudi_cow"
+TARGET_TABLE: "hudi.delta.cow"
+TABLE_TYPE: "COPY_ON_WRITE"
+WRITE_MODE: "UPSERT"
+SOURCE_ORDERING_FIELD: "modifiedDt"
+SPARK_EXECUTOR_INSTANCES: "8"
+SPARK_EXECUTOR_CORES: "4"
+SPARK_EXECUTOR_MEMORY: "32g"
+SPARK_DRIVER_MEMORY: "4g"
+SPARK_YARN_DRIVER_MEMORYOVERHEAD: "1024"
+SPARK_YARN_EXECUTOR_MEMORYOVERHEAD: "4096"
+
+Spark launcher: 
+String[] app_arguments = new String[] { "--props",
+      System.getenv("KAFKA_PROP_FILE"),
+      "--schemaprovider-class", "org.apache.hudi.utilities.schema.SchemaRegistryProvider", "--source-class",
+      "org.apache.hudi.utilities.sources.AvroKafkaSource", "--target-base-path",
+      System.getenv("HUDI_OUTPUT_LOC"), "--target-table",
+      System.getenv("TARGET_TABLE"), "--table-type", System.getenv("TABLE_TYPE"), "--commit-on-errors", "--op", System.getenv("WRITE_MODE"),
+      "--source-ordering-field", System.getenv("SOURCE_ORDERING_FIELD")};
+logger.info(StringUtils.join(app_arguments," "));
+
+sparkLauncher.setSparkHome(System.getenv("SPARK_HOME"))
+      .setAppResource("/usr/apps/hudi-utilities-bundle_2.11-0.6.0-SNAPSHOT.jar")
+      .setMainClass("org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer").setMaster("yarn").setDeployMode("cluster")
+      .setConf("spark.executor.instances", System.getenv("SPARK_EXECUTOR_INSTANCES"))
+      .setConf("spark.executor.cores", System.getenv("SPARK_EXECUTOR_CORES"))
+      .setConf("spark.executor.memory", System.getenv("SPARK_EXECUTOR_MEMORY"))
+      .setConf("spark.driver.memory", System.getenv("SPARK_DRIVER_MEMORY"))
+      .setConf("spark.yarn.driver.memoryOverhead", System.getenv("SPARK_YARN_DRIVER_MEMORYOVERHEAD"))
+      .setConf("spark.yarn.executor.memoryOverhead", System.getenv("SPARK_YARN_EXECUTOR_MEMORYOVERHEAD"))
+      .setConf("spark.driver.extraClassPath", System.getenv("JARS_PATH"))
+      .setConf("spark.executor.extraClassPath", System.getenv("JARS_PATH"))
+      .setConf("spark.yarn.queue", System.getenv("QUEUE"))
+      .setConf("spark.streaming.kafka.allowNonConsecutiveOffsets", "true")
+      .setVerbose(true)
+      .addAppArgs(app_arguments);
