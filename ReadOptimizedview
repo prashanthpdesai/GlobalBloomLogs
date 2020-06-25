@@ -11,7 +11,7 @@ CREATE EXTERNAL TABLE db.`hudioutput`(
   `MBR_SYS_ID` string,
   `SYS_ID` string,
   `modifiedTs` string,
-  `indicators` array<struct<`EFF_DT`:string,`END_DT`:string>>
+  `columns` array<struct<`EFF_DT`:string,`END_DT`:string>>
   )
   PARTITIONED BY (`modifiedDt` string)
   ROW FORMAT SERDE
