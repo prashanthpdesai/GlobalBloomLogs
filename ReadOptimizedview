@@ -26,7 +26,7 @@ CREATE EXTERNAL TABLE db.`hudioutput`(
     
 
 
-hive (default)> select * from hudioutput limit 2;
+hive (db)> select * from hudioutput limit 2;
 WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
 Query ID = 20200625123244_3616457c-1ce4-47e3-81bf-4d6e6c23f29d
 Total jobs = 1
