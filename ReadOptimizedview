@@ -1,0 +1,100 @@
+Hive DDL:
+
+add jar /home/prashanth/hudi-hadoop-mr-bundle-0.6.0-SNAPSHOT.jar;
+
+CREATE EXTERNAL TABLE db.`hudioutput`(
+  `_hoodie_commit_time` string,
+  `_hoodie_commit_seqno` string,
+  `_hoodie_record_key` string,
+  `_hoodie_partition_path` string,
+  `_hoodie_file_name` string,
+  `MBR_SYS_ID` string,
+  `SYS_ID` string,
+  `modifiedTs` string,
+  `indicators` array<struct<`EFF_DT`:string,`END_DT`:string>>
+  )
+  PARTITIONED BY (`modifiedDt` string)
+  ROW FORMAT SERDE
+    'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
+  STORED AS INPUTFORMAT
+    'org.apache.hudi.hadoop.HoodieParquetInputFormat'
+  OUTPUTFORMAT
+    'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'
+  LOCATION
+    'hdfs:/datalake/xxxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/'; 
+
+    
+
+
+hive (default)> select * from hudioutput limit 2;
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = 20200625123244_3616457c-1ce4-47e3-81bf-4d6e6c23f29d
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Hadoop job information for Stage-1: number of mappers: 25; number of reducers: 0
+2020-06-25 12:33:02,635 Stage-1 map = 0%,  reduce = 0%
+2020-06-25 12:33:34,459 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_1592061410552_3506598 with errors
+Error during job, obtaining debugging information...
+Examining task ID: task_1592061410552_3506598_m_000000 (and more) from job job_1592061410552_3506598
+Examining task ID: task_1592061410552_3506598_m_000000 (and more) from job job_1592061410552_3506598
+
+Task with the most failures(4):
+-----
+Task ID:
+  task_1592061410552_3506598_m_000000
+
+-----
+Diagnostic Messages for this Task:
+Error: java.lang.RuntimeException: java.lang.IllegalStateException: Ambiguous input path hdfs:///datalake/xxx/xx/prd/xx/hudi_cow_dedup_debug_new/2020-06-19/6d28f0b3-a76a-4add-8aea-9c01dcb6050a-0_16-22-712_20200623061027.parquet
+
+Caused by: java.lang.IllegalStateException: Ambiguous input path hdfs:///datalake/xxx/xx/prd/xx/hudi_cow_dedup_debug_new/2020-06-19/6d28f0b3-a76a-4add-8aea-9c01dcb6050a-0_16-22-712_20200623061027.parquet
+
+-======----
+hive (db)> show partitions db.hudioutput;
+OK
+modifieddt=2020-06-19
+modifieddt=2020-06-20
+modifieddt=2020-06-21
+modifieddt=2020-06-22
+modifieddt=2020-06-23
+modifieddt=2020-06-24
+modifieddt=2020-06-25
+
+id@edgenode:/xxx/datalake/xxx/xxx/prd/xxx/hudi_cow_dedup_debug_new/2020-06-19
+$ ls -latr
+total 1138738
+-rwxrwxrwx.  1 serviceid group       93 Jun 23 05:15 .hoodie_partition_metadata
+-rwxrwxrwx.  1 serviceid group  6183527 Jun 23 06:19 de764f74-bbf2-4ace-9c31-a13428ae43f1-0_6-22-702_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6233652 Jun 23 06:19 0fbd20f9-d902-41fd-bb4e-c285fc7ab9e1-0_4-22-700_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6192476 Jun 23 06:19 a94b3091-23e1-41e8-9b68-cf6cad335cd5-0_1-22-697_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6180187 Jun 23 06:19 754f814c-84a7-4d4a-a862-b3bc376aa5b5-0_10-22-706_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6199131 Jun 23 06:19 0f4c5ee0-94dc-407c-aa82-a5b6329e48b6-0_12-22-708_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6244157 Jun 23 06:19 878b5ccb-6192-41dc-8982-53cc509eb15c-0_11-22-707_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6186439 Jun 23 06:19 e15739d2-a7f1-4a9d-a3f1-120d4229cab7-0_8-22-704_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6225384 Jun 23 06:19 bd70a64e-f152-4045-8c9e-2bdb5b8d0a74-0_15-22-711_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6208747 Jun 23 06:19 6d28f0b3-a76a-4add-8aea-9c01dcb6050a-0_16-22-712_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6200121 Jun 23 06:19 87863283-46dc-4959-b034-7bc331bca579-0_7-22-703_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6205009 Jun 23 06:19 57b3a6c7-8140-4c66-993b-894f8fb749ab-0_14-22-710_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6185003 Jun 23 06:19 76147ff7-fcb8-4c6d-9845-3d88a9920e4e-0_13-22-709_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6182444 Jun 23 06:19 04a67c27-0329-4199-9bab-98444dbd1937-0_9-22-705_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6200887 Jun 23 06:19 8dfea5bc-9beb-4ca9-bd63-f94269d23b72-0_17-22-713_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6170395 Jun 23 06:19 a60da475-a558-4d9a-bf3b-34a71a22e64c-0_18-22-714_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6194783 Jun 23 06:19 2b05d98e-f5de-4a69-bb92-9a85ffeb4f7f-0_0-22-696_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group  6236608 Jun 23 06:19 3edcc086-8bd3-4b9c-8f75-5d002a0b6eea-0_5-22-701_20200623061027.parquet
+-rwxrwxrwx.  1 serviceid group 74848201 Jun 23 06:20 d05b0022-ec5a-4f26-af05-a48dd6bd97ce-0_3-22-699_20200623061027.parquet
+-rwxr-xr-x.  1 serviceid group 89635416 Jun 25 02:13 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625021226.parquet
+-rwxr-xr-x.  1 serviceid group 89627354 Jun 25 03:09 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-706_20200625030727.parquet
+drwxrwsrwx. 10 serviceid group        8 Jun 25 03:32 ..
+-rwxr-xr-x.  1 serviceid group 89627475 Jun 25 04:11 c53e99a9-6825-4aad-a14c-84e127550d47-0_1-22-704_20200625040936.parquet
+-rwxr-xr-x.  1 serviceid group 89624351 Jun 25 05:12 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625051107.parquet
+-rwxr-xr-x.  1 serviceid group 89622525 Jun 25 06:09 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625060827.parquet
+-rwxr-xr-x.  1 serviceid group 89620825 Jun 25 07:12 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625071150.parquet
+-rwxr-xr-x.  1 serviceid group 89618169 Jun 25 08:15 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-710_20200625081333.parquet
+-rwxr-xr-x.  1 serviceid group 89612987 Jun 25 09:14 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-706_20200625091337.parquet
+-rwxr-xr-x.  1 serviceid group 89602634 Jun 25 10:20 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625101856.parquet
+-rwxr-xr-x.  1 serviceid group 89598818 Jun 25 11:14 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625111208.parquet
+-rwxr-xr-x.  1 serviceid group 89590557 Jun 25 12:16 c53e99a9-6825-4aad-a14c-84e127550d47-0_2-22-708_20200625121424.parquet
+
+
